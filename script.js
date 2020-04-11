@@ -1,6 +1,6 @@
 
-//  Receipes from local JSON file
-let receipes = JSON.parse(receipesJSON);
+//  Recipes from local JSON file
+let recipes = JSON.parse(recipesJSON);
 
 // Select dropdown menus (choosing products that are in the kitchen)
 const productOne = document.getElementById('product-one');
@@ -10,14 +10,14 @@ const productFour = document.getElementById('product-four');
 
 // START HERE (filter() is called at the end of file)//
 
-// Takes: Receipes array + (productOne-ProductFour)values --> iterate (temporary(filtered receipes array))
+// Takes: Recipes array + (productOne-ProductFour)values --> iterate (temporary(filtered recipes array))
 function filter () {
   let productOne_value = productOne.value;
   let productTwo_value = productTwo.value;
   let productThree_value = productThree.value;
   let productFour_value = productFour.value;
 
-  let temporary = receipes;
+  let temporary = recipes;
 
   if (productOne_value == undefined || productOne_value == "-") {
 
@@ -54,10 +54,10 @@ function filter () {
   iterate(temporary);
 }
 
-// Takes: filtered receipes array --> apply (array single element)
+// Takes: filtered recipes array --> apply (array single element)
 function iterate (array) {
-  let receipesList = document.querySelector('#receipesList');
-  receipesList.innerHTML = "";
+  let recipesList = document.querySelector('#recipesList');
+  recipesList.innerHTML = "";
   for (let i=0; i<array.length; i++) {
     apply(array[i])
   }
@@ -66,11 +66,11 @@ function iterate (array) {
 
 // Takes: single element of filtered array --> __change the DOM
 function apply(array) {
-  let receipesList = document.querySelector('#receipesList');
-  let receipeItem = document.querySelector('.receipeItem');
-  let newNode = receipeItem.cloneNode(true);
+  let recipesList = document.querySelector('#recipesList');
+  let recipeItem = document.querySelector('.recipeItem');
+  let newNode = recipeItem.cloneNode(true);
 
-  receipesList.appendChild(newNode);
+  recipesList.appendChild(newNode);
 
   newNode.classList.remove('d-none');
 
