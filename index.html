@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Find the Perfect Recipe</title>
+  </head>
+  <body id="home">
+
+    <!--  Navbar -->
+
+    <nav class="navbar navbar-light ">
+      <a href="https://www.imandrzej.pl" class="navbar-brand">
+        <h3><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></h3>
+      </a>
+    </nav>
+
+    <!-- Select -->
+
+    <section id="select">
+      <div class="bg-info text-white">
+        <div class="container">
+          <div class="row">
+            <div class="col text-center py-4">
+              <h1>Choose Your Perfect Receipe</h1>
+              <h4 class="text-dark">What Do You Have In The Kitchen?</h4>
+            </div>
+          </div>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <label for="product-one" class="d-none d-md-block lead"
+                  >First Product:</label
+                >
+                <select class="form-control product" id="product-one">
+                  <option value="-" selected>-</option>
+                  <option value="butter">Butter</option>
+                  <option value="cheese">Cheese</option>
+                  <option value="egg">Egg</option>
+                  <option value="flour">Flour</option>
+                  <option value="salt">Salt</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="product-two" class="d-none d-md-block lead"
+                  >Second Product:</label
+                >
+                <select class="form-control product" id="product-two">
+                  <option value="-" selected>-</option>
+                  <option value="butter">Butter</option>
+                  <option value="cheese">Cheese</option>
+                  <option value="egg">Egg</option>
+                  <option value="flour">Flour</option>
+                  <option value="salt">Salt</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="product-three" class="d-none d-md-block lead"
+                  >Third Product:</label
+                >
+                <select class="form-control product" id="product-three">
+                  <option value="-" selected>-</option>
+                  <option value="butter">Butter</option>
+                  <option value="cheese">Cheese</option>
+                  <option value="egg">Egg</option>
+                  <option value="flour">Flour</option>
+                  <option value="salt">Salt</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="product-four" class="d-none d-md-block lead"
+                  >Fourth Product:</label
+                >
+                <select class="form-control product" id="product-four">
+                  <option value="-" selected>-</option>
+                  <option value="butter">Butter</option>
+                  <option value="cheese">Cheese</option>
+                  <option value="egg">Egg</option>
+                  <option value="flour">Flour</option>
+                  <option value="salt">Salt</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Receipes -->
+
+    <section id="receipes">
+      <hr />
+      <div>
+        <!-- not visible -->
+
+        <div class="row py-2 receipeItem d-none">
+          <div class="col-4 photo">
+            <img src="#" class="img-fluid modify"/>
+          </div>
+          <div class="col-8 d-flex flex-column justify-content-between">
+            <button class="btn align-self-end btn-print" data-toggle="tooltip" data-placement="top" title="Click to print shopping list.">
+              <i class="fas fa-print"></i>
+            </button>
+            <h3 class="align-self-center modify"></h3>
+            <div>
+              <h5>You Need:</h5>
+              <p class="lead modify list-print"></p>
+            </div>
+            <a href="" class="btn btn-info btn-block align-self-end modify">See It.</a>
+          </div>
+          <hr>
+        </div>
+
+        <div class="container bg-light" id="receipesList">
+
+        <!-- HERE JS WILL ADD CODE -->
+
+        </div>
+        <hr/>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer id="main-footer" class="py-3 bg-info text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h3>AndSzy</h3>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+
+    <div class="modal fade" id="printModal">
+      <div class="modal-dialog modal-full">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Print</h5>
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="elementToPrint">
+            <ul id="modalList">
+
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button id="printModalButton" class="btn btn-block btn-info" onclick="printModal()">Print</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script type="text/javascript" src="data.json"></script>
+    <script src="script.js"></script>
+    <script>
+
+    // Enable tooltips everywhere
+
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+  </body>
+</html>

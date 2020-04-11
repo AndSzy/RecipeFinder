@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .modal-full, .modal-content {
+    min-height: 100vh;
+    min-width: 100vw;
+  }
+
+  #elementToPrint, #elementToPrint * {
+    visibility: visible;
+  }
+  #elementToPrint {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 2rem;
+  }
+
+  #elementToPrint ul {
+    list-style-type: none;
+  }
+}
