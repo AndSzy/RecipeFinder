@@ -78,7 +78,8 @@ function apply(array) {
 
   itemsToModify[0].src = array.photo;
   itemsToModify[1].textContent = array.name;
-  itemsToModify[2].textContent = array.ingredients;
+  // White spaces added to improve responsibility
+  itemsToModify[2].textContent = array.ingredients.toString().replace(/,/g,", ");
   itemsToModify[3].href = array.link;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
